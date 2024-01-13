@@ -28,5 +28,36 @@ var dogInMiddle = Dog(
     age: 5,
     weightInKilograms: 22.680
 )
-dogInMiddle.heightInMetres
 dogInMiddle.heightInCentimetres
+dogInMiddle.lengthInCentimetres
+dogInMiddle.heightToLengthRatio
+dogInMiddle.BMI
+
+struct Book {
+    let bookTitle: String
+    let bookCategory: String
+    let bookPriceInCanadianDollar: Double
+    let numberOfCopies: Int
+    let bookLengthInPages: Int
+    let thickenedCover: Bool
+    var bookThicknessInCentimetres: Double{
+        if(thickenedCover){
+            return Double(bookLengthInPages/100)+0.4
+        }else{
+            return Double(bookLengthInPages/100)
+        }
+    }
+    var totalShelvesNeed: Double{
+        return bookThicknessInCentimetres*Double(numberOfCopies)/50
+    }
+}
+var macbeth = Book(
+    bookTitle: "Macbeth",
+    bookCategory: "Play",
+    bookPriceInCanadianDollar: 12.99,
+    numberOfCopies: 20,
+    bookLengthInPages: 188,
+    thickenedCover: false
+)
+macbeth.bookThicknessInCentimetres
+macbeth.totalShelvesNeed
