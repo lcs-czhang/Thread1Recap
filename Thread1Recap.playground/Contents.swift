@@ -42,9 +42,9 @@ struct Book {
     let thickenedCover: Bool
     var bookThicknessInCentimetres: Double{
         if(thickenedCover){
-            return Double(bookLengthInPages/100)+0.4
+            return Double(bookLengthInPages)/100+0.4
         }else{
-            return Double(bookLengthInPages/100)
+            return Double(bookLengthInPages)/100
         }
     }
     var totalShelvesNeed: Double{
